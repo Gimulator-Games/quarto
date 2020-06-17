@@ -1,0 +1,51 @@
+roles:
+  - name: "referee"
+    rules:
+      - key:
+          type: "verdict"
+          name: "board"
+          namesapce: "quarto"
+        methods:
+          - "set"
+      - key:
+          type: "action"
+          namespace: "quarto"
+        methods:
+          - "watch"
+      - key:
+          type: "register"
+          namespace: "quarto"
+        methods:
+          - "find"
+      - key:
+          type: "end-of-game"
+          name: "referee"
+          namespace: "quarto"
+        methods:
+          - "set"
+  - name: "agent"
+    rules:
+      - key:
+          type: "verdict"
+          name: "board"
+          namespace: "quarto"
+        methods:
+          - "watch"
+      - key:
+          type: "action"
+          namespace: "quarto"
+        methods:
+          - "set"
+      - key:
+          type: "register"
+          namespace: "quarto"
+        methods:
+          - "set"
+actors:
+  - id: "referee"
+    role: "referee"
+  - id: "agent-1"
+    role: "agent"
+  - id: "agent-2"
+    role: "agent"
+
